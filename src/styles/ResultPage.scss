@@ -1,0 +1,57 @@
+.ResultContainer {
+  .top-bar {
+    display: flex;
+    .input-div {
+      border: 1px solid #dfe1e5;
+      border-radius: 20px;
+      padding: 10px;
+      height: 20px !important;
+      display: flex;
+      margin-left: 20px;
+      flex: 1;
+      max-width: 650px;
+      input {
+        width: 100% !important;
+        border: none;
+        padding: 0 10px;
+        font-size: 16px;
+        outline: none;
+      }
+    }
+    .logo {
+      .big {
+        height: 35px;
+      }
+      .small {
+        height: 25px;
+      }
+    }
+  }
+
+  .options-bar {
+    padding-left: 160px;
+    margin-top: 20px;
+    border-bottom: 1px solid #dfe1e5;
+    span {
+      padding: 5px;
+    }
+    .AllBtn:hover {
+      cursor: pointer;
+    }
+    .ImagesBtn:hover {
+      cursor: pointer;
+    }
+  }
+}
+@media screen and(max-width:768px) {
+  .ResultContainer {
+    .logo {
+      .small {
+        display: none !important;
+      }
+    }
+    .options-bar {
+      padding-left: 50px !important;
+    }
+  }
+}
