@@ -75,6 +75,38 @@
     a:hover {
       text-decoration: underline;
     }
+    .pageNo {
+      margin: 20px 160px;
+      span:hover {
+        text-decoration: underline 1px solid #1a73e8;
+      }
+    }
+    .pageNo:hover {
+      cursor: pointer;
+    }
+    .relatedSearch {
+      margin: 20px 160px;
+      max-width: 600px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      .related {
+        width: 40%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        height: 40px;
+        margin: 10px 0;
+        background-color: #f1f3f4;
+        .text {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
   }
   .resultCount {
     padding: 5px 0;
@@ -93,6 +125,12 @@
     .displayData {
       .results {
         margin: 0 50px;
+      }
+      .pageNo {
+        margin: 20px 50px;
+      }
+      .relatedSearch {
+        margin: 20px 50px;
       }
     }
   }

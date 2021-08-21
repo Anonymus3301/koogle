@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import "../App.scss";
 import { useSelector, useDispatch } from "react-redux";
@@ -15,6 +15,9 @@ function ResultPage() {
   const myState = useSelector((state) => state.searchWeb);
   const [query, setQuery] = useState(myState);
   const [active, setActive] = useState(history.location.pathname);
+  useEffect(() => {
+    setQuery(myState);
+  }, [myState]);
 
   return (
     <div className="ResultContainer">
@@ -53,14 +56,16 @@ function ResultPage() {
         <span
           className="AllBtn"
           style={
-            active === "/results" ? { borderBottom: "3px solid blue" } : {}
+            active === "/results"
+              ? { borderBottom: "3px solid #1a73e8", color: "#1a73e8" }
+              : {}
           }
           onClick={() => {
             setActive("/results");
             history.push("/results");
           }}
         >
-          <Search />
+          <Search style={active === "/results" ? { fill: "#1a73e8" } : {}} />
           &nbsp;All
         </span>
 
@@ -68,7 +73,7 @@ function ResultPage() {
           className="ImagesBtn"
           style={
             active === "/results/images"
-              ? { borderBottom: "3px solid blue" }
+              ? { borderBottom: "3px solid blue", color: "#1a73e8" }
               : {}
           }
           onClick={() => {
@@ -76,7 +81,9 @@ function ResultPage() {
             history.push("/results/images");
           }}
         >
-          <PhotoLibraryOutlined />
+          <PhotoLibraryOutlined
+            style={active === "/results/images" ? { fill: "#1a73e8" } : {}}
+          />
           &nbsp;Images
         </span>
       </div>
