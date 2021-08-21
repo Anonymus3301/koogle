@@ -42,6 +42,36 @@
       cursor: pointer;
     }
   }
+  .displayData {
+    .results {
+      margin: 0 160px;
+      margin-top: 10px;
+      .url {
+        padding-top: 10px;
+        font-size: 14px;
+      }
+      .description {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #dfe1e5;
+      }
+    }
+    h3 {
+      font-family: arial, sans-serif;
+    }
+    a {
+      color: #1a0dab;
+      text-decoration: none;
+      .title {
+        font-size: 22px;
+      }
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+  .resultCount {
+    padding: 5px 0;
+  }
 }
 @media screen and(max-width:768px) {
   .ResultContainer {
@@ -52,6 +82,11 @@
     }
     .options-bar {
       padding-left: 50px !important;
+    }
+    .displayData {
+      .results {
+        margin: 0 50px;
+      }
     }
   }
 }
