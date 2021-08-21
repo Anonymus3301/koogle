@@ -9,12 +9,12 @@ function Home() {
       <div className="Home-container">
         <div className="Home">
           <div className="logo">
-            <img className="big" src="/k.jpg"></img>
-            <img className="small" src="/o1.jpg"></img>
-            <img className="small" src="/o2.jpg"></img>
-            <img className="small" src="/g.jpg"></img>
-            <img className="small" src="/l.jpg"></img>
-            <img className="small" src="/e.jpg"></img>
+            <img className="big" src="/k.jpg" alt=""></img>
+            <img className="small" src="/o1.jpg" alt=""></img>
+            <img className="small" src="/o2.jpg" alt=""></img>
+            <img className="small" src="/g.jpg" alt=""></img>
+            <img className="small" src="/l.jpg" alt=""></img>
+            <img className="small" src="/e.jpg" alt=""></img>
           </div>
 
           <div className="input-div">
