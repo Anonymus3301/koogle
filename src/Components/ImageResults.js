@@ -12,13 +12,13 @@ function ImageResults() {
     if (myState !== "") {
       axios
         .get(
-          `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?rapidapi-key=4c68e56ffcmsh1fe0713b11bd6f8p16852ejsn40f8dbd0e36b&q=${myState}`
+          `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?rapidapi-key=4c68e56ffcmsh1fe0713b11bd6f8p16852ejsn40f8dbd0e36b&q=${myState}&pageSize=50`
         )
         .then((res) => setData(res.data));
     } else {
       axios
         .get(
-          `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?rapidapi-key=4c68e56ffcmsh1fe0713b11bd6f8p16852ejsn40f8dbd0e36b&q=trending`
+          `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?rapidapi-key=4c68e56ffcmsh1fe0713b11bd6f8p16852ejsn40f8dbd0e36b&q=trending&pageSize=100`
         )
         .then((res) => setData(res.data));
     }

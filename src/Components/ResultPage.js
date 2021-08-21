@@ -6,6 +6,8 @@ import { useHistory } from "react-router-dom";
 import { searchweb } from "../actions";
 import WebResults from "./WebResults";
 import ImageResults from "./ImageResults";
+import Search from "@material-ui/icons/Search";
+import { PhotoLibraryOutlined } from "@material-ui/icons";
 
 function ResultPage() {
   const dispatch = useDispatch();
@@ -50,26 +52,36 @@ function ResultPage() {
       <div className="options-bar">
         <span
           className="AllBtn"
+          style={
+            active === "/results" ? { borderBottom: "3px solid blue" } : {}
+          }
           onClick={() => {
             setActive("/results");
             history.push("/results");
           }}
         >
-          All
+          <Search />
+          &nbsp;All
         </span>
 
         <span
           className="ImagesBtn"
+          style={
+            active === "/results/images"
+              ? { borderBottom: "3px solid blue" }
+              : {}
+          }
           onClick={() => {
             setActive("/results/images");
             history.push("/results/images");
           }}
         >
-          Images
+          <PhotoLibraryOutlined />
+          &nbsp;Images
         </span>
       </div>
-      {active === "/results" && <WebResults />}
-      {active === "/results/images" && <ImageResults />}
+      {history.location.pathname === "/results" && <WebResults />}
+      {history.location.pathname === "/results/images" && <ImageResults />}
     </div>
   );
 }
