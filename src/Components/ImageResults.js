@@ -7,22 +7,23 @@ function ImageResults() {
   const myState = useSelector((state) => state.searchWeb);
   const [data, setData] = useState([]);
   const [display, setDisplay] = useState([]);
-  console.log(display);
+  const [page, setPage] = useState(1);
+
   useEffect(() => {
     if (myState !== "") {
       axios
         .get(
-          `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?rapidapi-key=4c68e56ffcmsh1fe0713b11bd6f8p16852ejsn40f8dbd0e36b&q=${myState}&pageSize=50`
+          `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?rapidapi-key=4c68e56ffcmsh1fe0713b11bd6f8p16852ejsn40f8dbd0e36b&q=${myState}&pageSize=50&pageNumber=${page}`
         )
         .then((res) => setData(res.data));
     } else {
       axios
         .get(
-          `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?rapidapi-key=4c68e56ffcmsh1fe0713b11bd6f8p16852ejsn40f8dbd0e36b&q=trending&pageSize=100`
+          `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?rapidapi-key=4c68e56ffcmsh1fe0713b11bd6f8p16852ejsn40f8dbd0e36b&q=trending&pageSize=100&pageNumber=${page}`
         )
         .then((res) => setData(res.data));
     }
-  }, [myState]);
+  }, [myState, page]);
   useEffect(() => {
     if (data && data.value !== display) {
       setDisplay(data.value);
@@ -30,16 +31,111 @@ function ImageResults() {
   }, [data, display]);
 
   return (
-    <div className="ImageData">
-      {display &&
-        display.length &&
-        display.map((val, key) => {
-          return (
-            <div className="imageResults" key={key}>
-              <img src={val.thumbnail} alt=""></img>
-            </div>
-          );
-        })}
+    <div className="displayData">
+      <div className="resultCount">
+        Total Results:{data.totalCount ? data.totalCount : 0}
+      </div>
+      <div className="ImageData">
+        {display &&
+          display.length &&
+          display.map((val, key) => {
+            return (
+              <div className="imageResults" key={key}>
+                <img src={val.thumbnail} alt=""></img>
+              </div>
+            );
+          })}
+      </div>
+      <div className="pageNo">
+        {page !== 1 ? (
+          <span
+            style={{ color: "#1a73e8" }}
+            onClick={() => {
+              setPage(page - 1);
+            }}
+          >
+            {" "}
+            Previous{" "}
+          </span>
+        ) : (
+          <>&emsp;&emsp;&emsp;&ensp;&nbsp;</>
+        )}
+        &emsp;
+        <span
+          onClick={() => setPage(1)}
+          style={page === 1 ? {} : { color: "#1a73e8" }}
+        >
+          {" "}
+          1{" "}
+        </span>
+        <span
+          onClick={() => setPage(2)}
+          style={page === 2 ? {} : { color: "#1a73e8" }}
+        >
+          {" "}
+          2{" "}
+        </span>
+        <span
+          onClick={() => setPage(3)}
+          style={page === 3 ? {} : { color: "#1a73e8" }}
+        >
+          {" "}
+          3{" "}
+        </span>
+        <span
+          onClick={() => setPage(4)}
+          style={page === 4 ? {} : { color: "#1a73e8" }}
+        >
+          {" "}
+          4{" "}
+        </span>
+        <span
+          onClick={() => setPage(5)}
+          style={page === 5 ? {} : { color: "#1a73e8" }}
+        >
+          {" "}
+          5{" "}
+        </span>
+        <span
+          onClick={() => setPage(6)}
+          style={page === 6 ? {} : { color: "#1a73e8" }}
+        >
+          {" "}
+          6{" "}
+        </span>
+        <span
+          onClick={() => setPage(7)}
+          style={page === 7 ? {} : { color: "#1a73e8" }}
+        >
+          {" "}
+          7{" "}
+        </span>
+        <span
+          onClick={() => setPage(8)}
+          style={page === 8 ? {} : { color: "#1a73e8" }}
+        >
+          {" "}
+          8{" "}
+        </span>
+        <span
+          onClick={() => setPage(9)}
+          style={page === 9 ? {} : { color: "#1a73e8" }}
+        >
+          {" "}
+          9{" "}
+        </span>
+        {page !== 9 && (
+          <span
+            style={{ color: "#1a73e8" }}
+            onClick={() => {
+              setPage(page + 1);
+            }}
+          >
+            {" "}
+            &emsp; Next{" "}
+          </span>
+        )}
+      </div>
     </div>
   );
 }
