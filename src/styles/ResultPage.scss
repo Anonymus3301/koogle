@@ -106,6 +106,9 @@
           justify-content: center;
         }
       }
+      .related:hover {
+        cursor: pointer;
+      }
     }
   }
   .resultCount {
