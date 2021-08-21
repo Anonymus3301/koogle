@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import "../App.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { searchweb } from "../actions";
 import WebResults from "./WebResults";
 import ImageResults from "./ImageResults";
