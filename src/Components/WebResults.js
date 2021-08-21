@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-
 import "../App.scss";
 import axios from "axios";
 import { useSelector } from "react-redux";
 
 function WebResults() {
   const myState = useSelector((state) => state.searchWeb);
-
   const [data, setData] = useState([]);
   const [display, setDisplay] = useState([]);
 

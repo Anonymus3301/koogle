@@ -1,0 +1,20 @@
+.ImageData {
+  display: flex;
+  flex-wrap: wrap;
+
+  .imageResults {
+    max-width: 50%;
+  }
+}
+
+@media screen and(min-width:768px) {
+  .ImageData {
+    margin: 0 160px;
+  }
+}
+
+@media screen and(max-width:768px) {
+  .ImageData {
+    margin: 0 50px;
+  }
+}
