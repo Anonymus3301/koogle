@@ -46,7 +46,10 @@ function VideoResults() {
                     <img src={val.snippet.thumbnails.default.url} alt=""></img>
                   </a>
                   <div className="details">
-                    <div className="description">{val.snippet.description}</div>
+                    <div className="description">
+                      {" "}
+                      {val.snippet.description}
+                    </div>
                     <a
                       href={
                         "https://www.youtube.com/channel/" +
