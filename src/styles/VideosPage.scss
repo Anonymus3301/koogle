@@ -18,9 +18,12 @@
         }
         .details {
           padding-left: 20px;
+          overflow-x: auto;
           .description {
             height: 40px;
             overflow-y: hidden;
+            width: 100%;
+            overflow-x: hidden;
           }
         }
       }
