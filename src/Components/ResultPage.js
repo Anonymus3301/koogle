@@ -6,8 +6,9 @@ import { useHistory } from "react-router-dom";
 import { searchweb } from "../actions";
 import WebResults from "./WebResults";
 import ImageResults from "./ImageResults";
+import VideoResults from "./VideosResults";
 import Search from "@material-ui/icons/Search";
-import { PhotoLibraryOutlined } from "@material-ui/icons";
+import { PhotoLibraryOutlined, VideoLibrary } from "@material-ui/icons";
 
 function ResultPage() {
   const dispatch = useDispatch();
@@ -86,9 +87,27 @@ function ResultPage() {
           />
           &nbsp;Images
         </span>
+        <span
+          className="VideosBtn"
+          style={
+            active === "/results/videos"
+              ? { borderBottom: "3px solid blue", color: "#1a73e8" }
+              : {}
+          }
+          onClick={() => {
+            setActive("/results/videos");
+            history.push("/results/videos");
+          }}
+        >
+          <VideoLibrary
+            style={active === "/results/videos" ? { fill: "#1a73e8" } : {}}
+          />
+          &nbsp;Videos
+        </span>
       </div>
       {history.location.pathname === "/results" && <WebResults />}
       {history.location.pathname === "/results/images" && <ImageResults />}
+      {history.location.pathname === "/results/videos" && <VideoResults />}
     </div>
   );
 }

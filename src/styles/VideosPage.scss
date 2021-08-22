@@ -1,0 +1,37 @@
+.displayData {
+  .videosResult {
+    margin: 0 160px;
+    .videoContents {
+      .title {
+        margin-top: 10px;
+        font-size: 20px;
+        height: 26px;
+        overflow-y: hidden;
+      }
+      .videoItem {
+        padding: 10px 0;
+        display: flex;
+        border-bottom: 1px solid #dfe1e5;
+        img {
+          border-radius: 10px;
+          height: 75px;
+        }
+        .details {
+          padding-left: 20px;
+          .description {
+            height: 40px;
+            overflow-y: hidden;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .displayData {
+    .videosResult {
+      margin: 0 50px;
+    }
+  }
+}
